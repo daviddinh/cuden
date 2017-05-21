@@ -1,0 +1,24 @@
+{
+  "name": "cuden",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cudenvn/cuden.git"
+  },
+  "author": "cuden",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cudenvn/cuden/issues"
+  },
+  "homepage": "https://github.com/cudenvn/cuden#readme",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "nodemon": "^1.11.0"
+  }
+}
