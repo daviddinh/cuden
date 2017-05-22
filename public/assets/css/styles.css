@@ -1,0 +1,23 @@
+body {
+    background: skyblue;
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 30px;
+}
+
+h1,h2 {
+    font-size: 48px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+p, li {
+    font-size: 16px;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}

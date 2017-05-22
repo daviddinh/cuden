@@ -1,13 +1,24 @@
-var http = require('http');
-var fs = require('fs');
+var express = require('express');
+var app = express();
 
-var server = http.createServer(function (req, res) {
-    console.log('request was made: ' + req.url);
-    res.writeHead(200, { 'Content-Type': 'text/html' });
-    var myReadStream = fs.createReadStream(__dirname + '/index.html', 'utf8');
-    myReadStream.pipe(res);
-    //res.end('WOW SUCH AWESOMENESS');
+app.set('view engine', 'ejs');
+app.use('/public/assets', express.static('public/assets'));
+
+app.get('/', function (req, res) {
+    res.render('index');
 });
 
-server.listen(3000, '127.0.0.1');
-console.log('server started on port 3000');
+app.get('/about', function (req, res) {
+    res.render('about');
+});
+
+app.get('/contact', function (req, res) {
+    res.render('contact');
+});
+
+app.get('/profile/:id', function (req, res) {
+
+    var dummyData = { age: 15, job: 'plumber', hobbies: ['eating', 'fighting','football'] };
+    res.render('profile', { person: req.params.id, dummyData: dummyData });
+});
+app.listen(3000);
