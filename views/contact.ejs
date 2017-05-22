@@ -8,7 +8,17 @@
 <body>
     <% include partials/nav.ejs %>
         <h1>Contact cuden</h1>
-        <p>dfadsfdsfdsafas</p>
+
+        <form action="/contact" method="POST" id="contact-form">
+            <label for="who">Who do you want to contact?</label>
+            <input type="text" name="who" value="<%= qs.person %>">
+            <label for="email">What is your email?</label>
+            <input type="email" name="email" value="">
+            <label for="message">What is your message?</label>
+            <!--<input type="text" name="message" value="<%= qs.mess %>">-->
+            <textarea name="message" id="txtMessage" cols="30" rows="10"></textarea>
+            <button type="submit">Submit</button>
+        </form>
 </body>
 
 </html>
