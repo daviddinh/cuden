@@ -13,7 +13,7 @@ body {
     padding: 30px;
 }
 
-h1,h2 {
+h1, h2, h3 {
     font-size: 48px;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -36,5 +36,10 @@ input, textarea {
     margin-top: 8px;
     display: inline-block;
     border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    border: 1px solid #fff;
     border-radius: 4px;
 }

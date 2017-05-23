@@ -21,7 +21,7 @@ app.get('/contact', function (req, res) {
 
 app.post('/contact', urlencodedParser, function (req, res) {
     console.log(req.body);
-    res.render('contact', {qs: req.query});
+    res.render('contact-success', {data: req.body});
 });
 
 app.get('/profile/:id', function (req, res) {
@@ -29,6 +29,7 @@ app.get('/profile/:id', function (req, res) {
     var dummyData = { age: 15, job: 'plumber', hobbies: ['eating', 'fighting','football'] };
     res.render('profile', { person: req.params.id, dummyData: dummyData });
 });
+
 app.listen(process.env.PORT || 8080, function(){
     console.log('App has started...');
 });
