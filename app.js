@@ -29,4 +29,6 @@ app.get('/profile/:id', function (req, res) {
     var dummyData = { age: 15, job: 'plumber', hobbies: ['eating', 'fighting','football'] };
     res.render('profile', { person: req.params.id, dummyData: dummyData });
 });
-app.listen(3000);
+app.listen(process.env.PORT || 8080, function(){
+    console.log('App has started...');
+});
