@@ -5,7 +5,7 @@ var app = express();
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 app.set('view engine', 'ejs');
-app.use('/public/assets', express.static('public/assets'));
+app.use('/public', express.static('public'));
 
 app.get('/', function (req, res) {
     res.render('index');
@@ -30,6 +30,6 @@ app.get('/profile/:id', function (req, res) {
     res.render('profile', { person: req.params.id, dummyData: dummyData });
 });
 
-app.listen(process.env.PORT || 8080, function(){
+app.listen(process.env.PORT || 3000, function(){
     console.log('App has started...');
 });
