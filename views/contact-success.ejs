@@ -2,15 +2,17 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="/public/css/styles.css">
+    <% include partials/head.ejs %>
 </head>
 
 <body>
-    <% include partials/nav.ejs %>
+    <% include partials/header.ejs %>
+        <% include partials/nav.ejs %>
         <h1>Contact success</h1>
         <h3>Thank you for your comment!</h3>
         <p>You contacted <%= data.who %> and your message was: "<%= data.message %>"</p>
         <p>cuden will reply to you at: <%= data.email %></p>
+        <% include partials/footer.ejs %>
 </body>
 
 </html>
