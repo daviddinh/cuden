@@ -2,17 +2,20 @@
 <html>
 
 <head>
-    <title>cuden</title>
     <% include partials/head.ejs %>
-
 </head>
 
 <body>
     <% include partials/header.ejs %>
-        <% include partials/nav.ejs %>
-            <h1>cuden first node app</h1>
-            <p>welcome to my first site</p>
-            <% include partials/footer.ejs %>
+    <% include partials/nav.ejs %>
+    
+    <section id="main">
+        <h3>first node app</h3>
+        <p>welcome to my first site</p>
+    </section>    
+    
+    <% include partials/footer.ejs %>
+    <% include partials/scripts.ejs %>
 </body>
 
 </html>
