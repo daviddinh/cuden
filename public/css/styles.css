@@ -12,11 +12,8 @@ header {
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
-  line-height: 1.2;
-  padding: 10vw 2em;
   text-align: center;
 }
-
 
 header h1 {
   color: white;
@@ -54,26 +51,3 @@ h2 {
   margin-top: 1em;
   padding-top: 1em;
 }
-/*p, li {
-    font-size: 16px;
-    text-align: center;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 12px 20px;
-    margin-top: 8px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
-    border: 1px solid #fff;
-    border-radius: 4px;
-}*/
