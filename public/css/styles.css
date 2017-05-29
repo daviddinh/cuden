@@ -1,3 +1,4 @@
+/* Main layout rules */
 html {
   box-sizing: border-box;
   margin: 0;
@@ -7,12 +8,23 @@ html {
   box-sizing: inherit;
 }
 
+body {
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    margin: 0;
+    /*max-width: 50%;
+    line-height: 1.5;
+    padding: 4em 1em;*/
+    text-align: center;
+}
+
+/* Header rules */
 header {
   background-image: url("/public/img/header.jpg");
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
+  width: 100%;
 }
 
 header h1 {
@@ -25,8 +37,8 @@ header a {
   border: 1px solid #4D7EA8;
   border-radius: 999px;
   color: white;
-  font-size: 0.6em;
-  letter-spacing: 0.2em;
+  font-size: 12px;
+  letter-spacing: 2px;
   padding: 1em 2em;
   text-transform: uppercase;
   text-decoration: none;
@@ -39,15 +51,33 @@ header a:hover {
   color: white;
 }
 
-body {
-    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-    margin: 0 auto;
-    max-width: 50%;
-    line-height: 1.5;
-    padding: 4em 1em;
+/* The navigation bar */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
-h2 {
-  margin-top: 1em;
-  padding-top: 1em;
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+nav li {
+    float: left;
+}
+
+nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #111;
 }
