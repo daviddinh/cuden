@@ -15,6 +15,11 @@ body {
     line-height: 1.5;
     padding: 4em 1em;*/
     text-align: center;
+    margin-bottom: 120px;
+}
+
+section {
+  width: 100%;
 }
 
 /* Header rules */
@@ -26,12 +31,19 @@ header {
   text-align: center;
   width: 100vw;
   height: 25vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 header h1 {
   color: white;
   font-size: 2.5em;
   font-weight: lighter;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header a {
@@ -52,7 +64,7 @@ header a:hover {
   color: white;
 }
 
-/* The navigation bar */
+/* Navigation rules */
 nav {
   position: fixed;
   top: 0;
@@ -81,4 +93,14 @@ nav a {
 
 nav a:hover {
     background-color: #111;
+}
+
+/* Footer rules */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 80px;
+  background-color: pink;
+  width: 100%;
 }
