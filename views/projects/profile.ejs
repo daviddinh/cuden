@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>An important heading</h1>
+        <a href="">More...</a>
+    </header>
+    <% include ../partials/nav.ejs %>
+    <h1>You are viewing the profile of <%= person %></h1>
+    <p><strong>Age: </strong><%= dummyData.age %></p>
+    <p><strong>Job: </strong><%= dummyData.job %></p>
+    <h2>Hobbies</h2>
+    <ul>
+        <% dummyData.hobbies.forEach(function(item){ %>
+        <li><%= item %></li>
+        <% }); %>
+    </ul>
+    <% include ../partials/footer.ejs %>
+</body>
+
+</html>
