@@ -43,4 +43,7 @@ router.get('/profile/:id', function (req, res) {
 });
 
 //fire todoController
-todoController(router);
+//todoController(router);
+router.get('/todo', todoController.listHome);
+router.post('/todo', urlencodedParser, todoController.listSend);
+router.delete('/todo/:item', todoController.listDelete);
