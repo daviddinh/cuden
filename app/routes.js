@@ -1,12 +1,11 @@
 //create new express router
 var express = require('express');
 var router = express.Router();
-var mainController = require('./controllers/mainController');
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
+//controller for routes callbacks
+var mainController = require('./controllers/mainController');
+var todoController = require('./controllers/todoController');
 
-//connect to database
-mongoose.connect('mongodb://admin:yoloswag@ds161931.mlab.com:61931/heroku_pc2nqvld');
 
 //body parser for form data
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
@@ -43,6 +42,5 @@ router.get('/profile/:id', function (req, res) {
     res.render('projects/profile', { person: req.params.id, dummyData: dummyData });
 });
 
-router.get('/todo', function (req, res) {
-    res.render('projects/todo');
-})
+//fire todoController
+todoController(router);

@@ -3,6 +3,8 @@
 
 <head>
     <% include ../partials/head.ejs %>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="/public/js/todo.js"></script>
 </head>
 
 <body>
@@ -10,8 +12,19 @@
         <h1>An important heading</h1>
     </header>
     <% include ../partials/nav.ejs %>
-        <h1>todo app</h1>
-        <p>ho chi minh</p>
+
+    
+        <h1>todo list</h1>
+        <form>
+            <input type="text" name="item" placeholder="Add new item..." required />
+            <button type="submit">Add Item</button>
+        </form>
+        <ul style="list-style-type: none;">
+            <% for(var i=0; i < todos.length; i++){ %>
+                <li><h3><%= todos[i].item %></h3></li>
+            <% } %>
+        </ul>
+
     <% include ../partials/footer.ejs %>
 </body>
 
