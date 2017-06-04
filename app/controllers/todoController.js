@@ -1,16 +1,10 @@
 // var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var todoModel = require('../models/todoModel');
 
 //connect to database
 mongoose.connect('mongodb://admin:yolo@ds161931.mlab.com:61931/heroku_vzwh3llq');
 
-//create a schema
-var todoSchema = new mongoose.Schema({
-    item: String
-});
-
-//create a model
-var Todo = mongoose.model('Todo', todoSchema);
 
 // var item = Todo({item: 'buuuuuuuuuuu'}).save(function(err){
 //     if (err) throw err;
@@ -47,7 +41,7 @@ var Todo = mongoose.model('Todo', todoSchema);
 
 module.exports = {
     listHome: function (req, res) {
-        Todo.find({}, function (err, data) {
+        todoModel.find({}, function (err, data) {
             if (err) throw err;
             res.render('projects/todo', { todos: data });
         });
@@ -55,7 +49,7 @@ module.exports = {
 
     listSend: function (req, res) {
         //get data from the view and save in mongodb
-        var newItem = Todo(req.body).save(function (err, data) {
+        var newItem = todoModel(req.body).save(function (err, data) {
             if (err) throw err;
             res.json(data);
         });
@@ -64,7 +58,7 @@ module.exports = {
 
     listDelete: function (req, res) {
         //delete item from db
-        Todo.find({ item: req.params.item.replace(/\-/g, " ") }).remove(function (err, data) {
+        todoModel.find({ item: req.params.item.replace(/\-/g, " ") }).remove(function (err, data) {
             if (err) throw err;
             res.json(data);
         });
