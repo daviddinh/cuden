@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 //controller for routes callbacks
 var mainController = require('./controllers/mainController');
 var todoController = require('./controllers/todoController');
-
+var crudController = require('./controller/crudController');
 
 //body parser for form data
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
@@ -36,14 +36,19 @@ router.get('/projects', function (req, res) {
     res.render('projects');
 });
 
-//MINI PROJECTS AND TINGS
+/* ========== MINI PROJECTS AND TINGS ========== */
+
+//profile page
 router.get('/profile/:id', function (req, res) {
     var dummyData = { age: 15, job: 'plumber', hobbies: ['eating', 'fighting', 'football'] };
     res.render('projects/profile', { person: req.params.id, dummyData: dummyData });
 });
 
 //fire todoController
-//todoController(router);
 router.get('/todo', todoController.listHome);
 router.post('/todo', urlencodedParser, todoController.listSend);
 router.delete('/todo/:item', todoController.listDelete);
+
+//CRUD
+router.get('/crud', crudController.listProducts);
+router.post('/crud', urlencodedParser, crudController.newProduct);

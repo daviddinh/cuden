@@ -55,7 +55,6 @@ module.exports = {
         });
     },
 
-
     listDelete: function (req, res) {
         //delete item from db
         todoModel.find({ item: req.params.item.replace(/\-/g, " ") }).remove(function (err, data) {

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        main {
+            display: flex;
+        }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section>
+            <a href="">Create new product</a>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Brand</th>
+                        <th>Name</th>
+                        <th>Desccription</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (product of products) { %>
+                    <tr>
+                        <td><%= product.fds %></td>
+                        <td><%= product.fds %></td>
+                        <td><%= product.fds %></td>
+                        <td><%= product.fds %></td>
+                        <td><%= product.fds %></td>
+                        <td>
+                            <a href="/crud/<%= product.slug %>">Edit</a>
+                            <a href="//crud/<%= product.slug %>">Destroy</a>
+                        </td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+
+</html>
