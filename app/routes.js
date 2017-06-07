@@ -52,4 +52,4 @@ router.delete('/todo/:item', todoController.listDelete);
 //CRUD
 router.get('/crud', crudController.listProducts);
 router.get('/crud/new', crudController.newProduct);
-router.post('/crud/new', urlencodedParser, crudController.newProduct);
+router.post('/crud/new', urlencodedParser, crudController.saveNewProduct);

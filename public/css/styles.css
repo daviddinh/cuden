@@ -111,6 +111,8 @@ footer p {
 }
 
 /*CUSTOM CSS*/
-.todoList:hover {
+
+.strikethrough li:hover {
   text-decoration: line-through;
 }
+

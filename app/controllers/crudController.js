@@ -12,14 +12,14 @@ module.exports = {
         });
     },
     newProduct: function (req, res) {
-        res.render('projects/crud/new', { qs: req.query });
+        res.render('projects/crud/new');
     },
     saveNewProduct: function (req, res) {
         console.log(req.body);
         var newProduct = productModel(req.body).save(function (err, data) {
             if (err) throw err;
             //res.json(data);
-            res.render('projects/crud/new', { data: req.body });
+            res.render('projects/crud/crud');
         });
     }
 }
