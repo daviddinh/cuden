@@ -5,10 +5,13 @@ var schema = mongoose.Schema;
 var crudSchema = new mongoose.Schema({
     brand: String,
     name: String,
+    slug: {
+        type: String,
+        unique: true
+    },
     desc: String,
     price: Number,
-    stock:Number,
-    slug: String
+    stock: Number
 });
 
 //create a model

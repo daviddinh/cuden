@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Product</title>
+    <style>
+        main {
+            display: flex;
+        }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        input {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Add new product</h1>
+        <form>
+            <label for="brand">Brand:</label>
+            <input type="text" name="brand">
+
+            <label for="name">Name:</label>
+            <input type="text" name="name">
+            
+            <label for="desc">Description:</label>
+            <input type="text" name="desc" multiple="multiple">
+
+            <label for="price">Price:</label>
+            <input type="text" name="price">
+
+            <label for="stock">Stock:</label>
+            <input type="text" name="stock">
+
+            <button type="submit">Submit</button>
+        </form>
+        </section>
+    </main>
+</body>
+
+</html>

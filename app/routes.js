@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 //controller for routes callbacks
 var mainController = require('./controllers/mainController');
 var todoController = require('./controllers/todoController');
-var crudController = require('./controller/crudController');
+var crudController = require('./controllers/crudController');
 
 //body parser for form data
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
@@ -51,4 +51,5 @@ router.delete('/todo/:item', todoController.listDelete);
 
 //CRUD
 router.get('/crud', crudController.listProducts);
-router.post('/crud', urlencodedParser, crudController.newProduct);
+router.get('/crud/new', crudController.newProduct);
+router.post('/crud/new', urlencodedParser, crudController.newProduct);
