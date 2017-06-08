@@ -27,6 +27,33 @@
             display: block;
         }
     </style>
+    <script>
+        $(document).ready(function () {
+
+            $('form').on('submit', function () {
+
+                var brand = $('#brand').val();
+                var name = $('#name').val();
+                var desc = $('#desc').val();
+                var price = $('#price').val();
+                var stock = $('#stock').val();
+
+                var product = { brand: brand, name: name, desc: desc, price: price, stock: stock};
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/crud/new',
+                    data: product,
+                    success: function (data) {
+                        //do something with the data via front-end framework
+                        console.log(data);
+                        location.reload();
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -34,19 +61,19 @@
         <h1>Add new product</h1>
         <form>
             <label for="brand">Brand:</label>
-            <input type="text" name="brand">
+            <input type="text" name="brand" id="brand">
 
             <label for="name">Name:</label>
-            <input type="text" name="name">
+            <input type="text" name="name" id="name">
             
             <label for="desc">Description:</label>
-            <input type="text" name="desc" multiple="multiple">
+            <input type="text" name="desc" multiple="multiple" id="desc">
 
             <label for="price">Price:</label>
-            <input type="text" name="price">
+            <input type="text" name="price" id="price">
 
             <label for="stock">Stock:</label>
-            <input type="text" name="stock">
+            <input type="text" name="stock" id="stock">
 
             <button type="submit">Submit</button>
         </form>
