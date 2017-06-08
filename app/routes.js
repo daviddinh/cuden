@@ -2,18 +2,19 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
+
 //controller for routes callbacks
 var mainController = require('./controllers/mainController');
 var todoController = require('./controllers/todoController');
 var crudController = require('./controllers/crudController');
 
 //body parser for form data
-var urlencodedParser = bodyParser.urlencoded({ extended: false });
+router.use(bodyParser.urlencoded({ extended: false }));
 
 //export router
 module.exports = router;
 
-//define routes
+/* ========== DEFINE ROUTES ========== */
 router.get('/', function (req, res) {
     res.render('index');
 });
@@ -26,7 +27,7 @@ router.get('/contact', function (req, res) {
     res.render('contact', { qs: req.query });
 });
 
-router.post('/contact', urlencodedParser, function (req, res) {
+router.post('/contact', function (req, res) {
     console.log(req.body);
     res.render('contact-success', { data: req.body });
 });
@@ -46,10 +47,10 @@ router.get('/profile/:id', function (req, res) {
 
 //fire todoController
 router.get('/todo', todoController.listHome);
-router.post('/todo', urlencodedParser, todoController.listSend);
+router.post('/todo', todoController.listSend);
 router.delete('/todo/:item', todoController.listDelete);
 
 //CRUD
-router.get('/crud', crudController.listProducts);
-router.get('/crud/new', crudController.newProduct);
-router.post('/crud/new', urlencodedParser, crudController.saveNewProduct);
+router.get('/crud', crudController.listProducts); //list all products
+router.get('/crud/new', crudController.newProduct); //load create product form
+router.post('/crud/new', crudController.saveNewProduct); //create new product

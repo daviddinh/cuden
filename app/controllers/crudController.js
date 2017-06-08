@@ -18,7 +18,7 @@ module.exports = {
         console.log(req.body);
         var newProduct = productModel(req.body).save(function (err, data) {
             if (err) throw err;
-            res.json(data);
+            //res.json(data);
             res.render('projects/crud/new');
         });
     }

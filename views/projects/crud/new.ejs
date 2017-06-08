@@ -27,7 +27,7 @@
             display: block;
         }
     </style>
-    <script>
+    <!--<script>
         $(document).ready(function () {
 
             $('form').on('submit', function () {
@@ -53,13 +53,13 @@
                 return false;
             });
         });
-    </script>
+    </script>-->
 </head>
 
 <body>
     <main>
         <h1>Add new product</h1>
-        <form>
+        <form action="/crud/new" method="POST">
             <label for="brand">Brand:</label>
             <input type="text" name="brand" id="brand">
 
