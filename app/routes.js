@@ -54,3 +54,5 @@ router.delete('/todo/:item', todoController.listDelete);
 router.get('/crud', crudController.listProducts); //list all products
 router.get('/crud/new', crudController.newProduct); //load create product form
 router.post('/crud/new', crudController.saveNewProduct); //create new product
+router.delete('/crud/:product', crudController.deleteProduct);
+

@@ -61,21 +61,22 @@
         <h1>Add new product</h1>
         <form action="/crud/new" method="POST">
             <label for="brand">Brand:</label>
-            <input type="text" name="brand" id="brand">
+            <input type="text" name="brand" id="brand" required>
 
             <label for="name">Name:</label>
-            <input type="text" name="name" id="name">
+            <input type="text" name="name" id="name" required>
             
             <label for="desc">Description:</label>
             <input type="text" name="desc" multiple="multiple" id="desc">
 
             <label for="price">Price:</label>
-            <input type="text" name="price" id="price">
+            <input type="text" name="price" id="price" required>
 
             <label for="stock">Stock:</label>
             <input type="text" name="stock" id="stock">
 
             <button type="submit">Submit</button>
+            <a href="/crud">Back</a>
         </form>
         </section>
     </main>

@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <title>Products</title>
     <style>
         main {
             display: flex;
@@ -40,7 +41,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    <% for(var i=0; i < products.length; i++){ %>
+                        <tr><td><%= products[i].brand %></td>
+                        <td><%= products[i].name %></td>
+                        <td><%= products[i].desc %></td>
+                        <td><%= products[i].price %></td>
+                        <td><%= products[i].stock %></td>
+                        <td><a href="<%= products[i].slug %>">Edit</a>
+                        <a href="<%= products[i].slug %>">Delete</a></td></tr>
+                    <% } %>
                 </tbody>
             </table>
         </section>
