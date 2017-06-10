@@ -15,7 +15,6 @@ module.exports = {
         res.render('projects/crud/new');
     },
     saveNewProduct: function (req, res) {
-        console.log(req.body);
         var newProduct = productModel(req.body).save(function (err, data) {
             if (err) throw err;
             res.render('projects/crud/new');
@@ -26,7 +25,6 @@ module.exports = {
         productModel.find({ item: req.params.item.replace(/\-/g, " ") }).remove(function (err, data) {
             if (err) throw err;
             //res.render('projects/crud');
-            console.log(data);
         });
     }
 }
